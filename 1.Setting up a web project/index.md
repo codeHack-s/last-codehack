@@ -4,7 +4,7 @@ This repository provides a comprehensive guide to setting up a web development e
 
 ## Table of Contents
 
-1. Visual Studio Code Setup || [Link](Visual%20Studio%20Code%20Setup/index.md)
+1. Visual Studio Code Setup
 2. Useful Extensions
 3. Coding Tips
 4. Git and GitHub
