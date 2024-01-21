@@ -25,6 +25,10 @@ This part of the guide covers how to handle HTTP requests and responses, includi
 
 In this section, we discuss how to connect a web application to a database, including SQL databases, NoSQL databases, and ORMs.
 
+## The best way to learn
+
+Practice
+
 ## Contributing
 
 We welcome contributions from the community. If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
