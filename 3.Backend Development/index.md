@@ -205,72 +205,8 @@ fetch("http://localhost:{PORT}/add", {
 
 ### Connecting to Databases
 
-Connecting your application to a database allows you to store, retrieve, and manipulate data.
+In this section, we discuss how to connect a web application to a database, including SQL databases, NoSQL databases, and ORMs.
 
-This allows for data persistence, which means that data is retained even after the application is closed or restarted.
+## Contributing
 
-- **Relational Databases**: Relational databases store data in tables that are related to each other through the use of primary and foreign keys. Examples include MySQL, PostgreSQL, and SQLite.
-- **NoSQL Databases**: NoSQL databases store data in a non-tabular format. Examples include MongoDB, Firebase, and Redis.
-
-### How to download MySQL
-
-The simplest way is to install XAMPP, which includes MySQL as well as other useful tools. You can download XAMPP from the official website in the link below.
-[Click Here 👇](https://www.apachefriends.org/download.html)
-
-MySQL is a popular open-source relational database. Here's an example of how to connect to a MySQL database using the `mysql` module:
-
-_A `module` is a collection of JavaScript functions and objects that can be used by external applications. Node.js has a set of built-in modules that we can use without installing them. We can also create our own modules and use them in our applications._
-
-```javascript
-const mysql = require("mysql");
-
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "username",
-  password: "password",
-  database: "database",
-});
-
-connection.connect((err) => {
-  if (err) throw err;
-  console.log("Connected to the MySQL server.");
-});
-```
-
-This code creates a connection to a MySQL server running on localhost. Replace `'username'`, `'password'`, and `'database'` with your actual MySQL username, password, and database name.
-
-### Using the created connection
-
-Once the connection is established, we can use the `connection` object to execute queries.
-
-```javascript
-connection.query("SELECT * FROM users", (err, rows) => {
-  if (err) throw err;
-
-  console.log("Data received from the database:");
-  console.log(rows);
-});
-```
-
-Example endpoint that returns all users from the database:
-
-```javascript
-app.get("/users", (req, res) => {
-  connection.query("SELECT * FROM users", (err, rows) => {
-    if (err) throw err;
-
-    res.json(rows);
-  });
-});
-```
-
-### Contributing
-
-We welcome contributions from the community. If you have any suggestions or improvements, feel free to open an issue or submit a pull request. Please make sure to follow the contribution guidelines.
-
-1. Fork the repository.
-2. Create a new branch for your changes.
-3. Make your changes in your branch.
-4. Submit a pull request from your branch to the master branch in the original repository.
-
-We appreciate your help in making this guide better!
+We welcome contributions from the community. If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
