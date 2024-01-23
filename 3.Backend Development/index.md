@@ -34,7 +34,6 @@ Now, we have to initialize the project using npm
 Npm will ask you some questions. You can skip them by using `-y` flag.
 Installing dependencies
 
-<<<<<<< HEAD
 ```bash
     npm install {package-name}
 ```
