@@ -46,6 +46,9 @@ Using the installed package
 
 ```bash
     touch {filename}.js
+
+    if you are using windows
+    Create a new file and name it {filename}.js
 ```
 Inside the file add the following code
 
