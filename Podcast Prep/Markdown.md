@@ -4,34 +4,141 @@
 - Brief overview of what web frameworks are.
 - Why they are important in web development.
 
-## Reactivity
-- Explanation of what reactivity is.
-- How reactivity works in web frameworks.
-- Benefits of reactivity.
+## Comparison Table
 
-## Components
-- Explanation of what components are.
-- How components work in web frameworks.
-- Benefits of components.
+| Feature           | Laravel/Livewire                              | VanillaJS                                    | React                                      |
+| ----------------- | --------------------------------------------- | -------------------------------------------- | ------------------------------------------ |
+| Reactivity        | Built-in, with Livewire's reactive properties | Manual DOM manipulation                      | React's state and props system             |
+| Components        | Livewire components                           | JavaScript functions/objects for components  | React components                           |
+| Routing           | Laravel Routes                                | Manual handling using JS                     | React Router                               |
+| State Management  | Global state with Livewire                    | Manual state management in JS                | UseState, UseReducer, Context API          |
+| Rendering         | Server-side (PHP) and client-side (Livewire)  | Client-side rendering with JS                | Client-side rendering with JSX             |
+| Installation      | Composer for Laravel, Livewire via Composer   | No installation needed                       | Create-React-App, npm or yarn              |
 
-## Routing
-- Explanation of what routing is.
-- How routing works in web frameworks.
-- Benefits of routing.
+## Code Examples
 
-## State Management
-- Explanation of what state management is.
-- How state management works in web frameworks.
-- Benefits of state management.
+### Reactivity
 
-## Rendering
-- Explanation of what rendering is.
-- How rendering works in web frameworks.
-- Benefits of rendering.
+- **Laravel/Livewire:**
+  ```php
+  public $count = 0;
 
-## Installation
-- How to install a web framework.
-- Common issues during installation and how to resolve them.
+  public function increment()
+  {
+      $this->count++;
+  }
+  ```
+- **VanillaJS:**
+  ```javascript
+  let count = 0;
+  document.getElementById('incrementButton').addEventListener('click', () => {
+      count++;
+      document.getElementById('countDisplay').innerText = count;
+  });
+  ```
+- **React:**
+  ```javascript
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+      setCount(count + 1);
+  };
+  ```
+
+### Components
+
+- **Laravel/Livewire:**
+  ```php
+  // In a Livewire component file
+  public function render()
+  {
+      return view('livewire.counter');
+  }
+  ```
+- **VanillaJS:**
+  ```javascript
+  function renderCounter() {
+      document.getElementById('counter').innerHTML = '<button>Click Me</button>';
+  }
+  ```
+- **React:**
+  ```javascript
+  function Counter() {
+      return <button>Click Me</button>;
+  }
+  ```
+
+### Routing
+
+- **Laravel/Livewire:**
+  ```php
+  // In web.php
+  Route::get('/home', 'HomeController@index');
+  ```
+- **VanillaJS:**
+  ```javascript
+  // Using window.location for simple routing
+  if (window.location.pathname === '/home') {
+      renderHomePage();
+  }
+  ```
+- **React:**
+  ```javascript
+  // Using React Router
+  <Route path="/home" component={Home}/>
+  ```
+
+### State Management
+
+- **Laravel/Livewire:**
+  ```php
+  // State is managed within a Livewire component's properties
+  public $stateVariable = 'initial value';
+  ```
+- **VanillaJS:**
+  ```javascript
+  // Global variable or component-specific state
+  let stateVariable = 'initial value';
+  ```
+- **React:**
+  ```javascript
+  const [stateVariable, setStateVariable] = useState('initial value');
+  ```
+
+### Rendering
+
+- **Laravel/Livewire:**
+  ```php
+  // Livewire component's view file
+  <span>{{ $count }}</span>
+  ```
+- **VanillaJS:**
+  ```javascript
+  // Directly manipulating the DOM
+  document.getElementById('element').innerText = count;
+  ```
+- **React:**
+  ```javascript
+  // JSX rendering
+  <span>{count}</span>
+  ```
+
+### Installation
+
+- **Laravel/Livewire:**
+  ```shell
+  composer create-project laravel/laravel example-app
+  composer require livewire/livewire
+  ```
+- **VanillaJS:**
+  ```plaintext
+  // No installation required
+  ```
+- **React:**
+  ```shell
+  npx create-react-app my-app
+  ```
+
 
 ## Popular Web Frameworks
 - Brief overview of popular web frameworks.
